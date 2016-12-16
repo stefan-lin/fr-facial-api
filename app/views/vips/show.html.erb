@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Img name:</strong>
+  <%= @vip.img_name %>
+</p>
+
+<p>
+  <strong>Img type:</strong>
+  <%= @vip.img_type %>
+</p>
+
+<p>
+  <strong>Img data:</strong>
+  <%= @vip.img_data %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @vip.size %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @vip.instance_variable_get(:@tempURL) %>
+</p>
+
+
+<p>
+  <strong>Body:</strong>
+  <%= @vip.instance_variable_get(:@tempBody) %>
+ </p>
+
+<%= link_to 'Edit', edit_vip_path(@vip) %> |
+<%= link_to 'Back', vips_path %>

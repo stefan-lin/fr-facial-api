@@ -1,0 +1,32 @@
+  [1m[36mVip Load (72.1ms)[0m  [1m[34mSELECT  `vips`.* FROM `vips` LIMIT 1[0m
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from irb_binding at (irb):2)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from irb_binding at (irb):21)
+Started GET "/" for 127.0.0.1 at 2016-12-16 13:32:48 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (54.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MatchingsController#new as HTML
+  Rendering matchings/new.html.erb within layouts/application
+  Rendered matchings/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 762ms (Views: 422.3ms | ActiveRecord: 305.9ms)
+
+
+Started POST "/matchings" for 127.0.0.1 at 2016-12-16 13:44:10 -0800
+Processing by MatchingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QzuJsbi1RkkiUwlz/GVBAcqXuqo0TwkGyFUvvy0c/M/3l9cN97HidEZY9z1tFOmCAwl89qiVy3/4L+Zwh8IuiA==", "matching"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x005617aacffec8 @tempfile=#<Tempfile:/tmp/RackMultipart20161216-18121-yepl7x.png>, @original_filename="images.duckduckgo.com.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"matching[image]\"; filename=\"images.duckduckgo.com.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Matching"}
+  [1m[35m (54.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (54.3ms)[0m  [1m[32mINSERT INTO `matchings` (`created_at`, `updated_at`, `image_uid`) VALUES ('2016-12-16 21:44:10', '2016-12-16 21:44:10', '2016/12/16/5xtns6bnra_images.duckduckgo.com.png')[0m
+  [1m[35m (56.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 10348ms (ActiveRecord: 165.1ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/matchings_controller.rb:64:in `create'
+  Rendering /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/lambda/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.0ms)
